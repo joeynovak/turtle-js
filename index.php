@@ -5,14 +5,8 @@
     <script   src="//code.jquery.com/jquery-1.12.4.js"   integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="   crossorigin="anonymous"></script>
     <script>
         jQuery(function(){
-            var turtle = new Turtle(this.getElementById('svg'));
-            turtle.up();
-            turtle.down();
-            turtle.fw(100);
-            turtle.left(90);
-            turtle.fw(100);
-            turtle.circle(200);
-            turtle.arc(98, -180);
+
+
         });
     </script>
     <style>
@@ -23,6 +17,23 @@
     </style>
 </head>
 <body>
+<textarea id="textbox">
+    turtle
+                .down()
+                .fw(100)
+                .left(90)
+                .fw(100)
+                .circle(200)
+                .arc(98, -180)
+
+                .up()
+                .fw(80)
+
+                .down()
+                .right(90)
+                .fw(25)
+</textarea>
+<button onclick="var turtle = new Turtle(document.getElementById('svg')); eval(jQuery('#textbox').val());"></button>
     <div id="svg-container" style="width: 1000px; height: 1000px">
         <svg
             xmlns:dc="http://purl.org/dc/elements/1.1/"

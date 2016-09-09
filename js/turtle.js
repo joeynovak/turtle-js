@@ -25,10 +25,12 @@ var Turtle = function(element){
 
     this.up = function(){
         this.isdown = false;
+        return this;
     }
 
     this.down = function(){
         this.isdown = true;
+        return this;
     }
 
     this.fw = function(distance){
@@ -38,14 +40,17 @@ var Turtle = function(element){
             this.svg.line(this.x, this.y, newx, newy);
         this.x = newx;
         this.y = newy;
+        return this;
     }
 
     this.left = function(degrees){
         this.angle += Math.radians(degrees);
+        return this;
     }
 
     this.right = function(degrees){
         this.angle -= Math.radians(degrees);
+        return this;
     }
 
     this.circle = function(diameter){
@@ -53,6 +58,8 @@ var Turtle = function(element){
             var circle = this.svg.circle(diameter * this.scale);
             circle.translate(this.x - diameter / 2 * this.scale, this.y - diameter / 2 * this.scale);
         }
+        
+        return this;
     }
 
     this.arc = function(radius, degrees){
@@ -64,6 +71,8 @@ var Turtle = function(element){
             //ellipse.radius(a, b * 100);
             //ellipse.translate(this.x, this.y);
         }
+        
+        return this;
     }
 
     function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
